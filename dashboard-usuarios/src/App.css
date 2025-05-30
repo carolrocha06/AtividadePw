@@ -1,6 +1,6 @@
 /* src/App.css */
 .App {
-    background-color: #dd32ece0;
+    background-color: #FF97CF;
     font-family: Arial, sans-serif;
     padding: 20px;
     text-align: center;
@@ -14,8 +14,10 @@
 
 h1 {
     color: #f9f9f9;
+    text-shadow: 2px 1px 6px black; /* deslocamento-x, deslocamento-y, raio-de-desfoque, cor */
 }
 
-p {
+h2 {
     color: #f9f9f9;
+    text-shadow: 1px 1px 2px black; 
 }

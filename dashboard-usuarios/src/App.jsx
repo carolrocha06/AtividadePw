@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <h1>Dashboard de Usuários</h1>
-      <p>Total de usuários: {users.length}</p>
+      <h2>Total de usuários: {users.length}</h2>
       <div className="user-container">
         {users.map((user) => (
           <UserCard key={user.id} user={user} />
