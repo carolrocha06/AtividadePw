@@ -4,8 +4,9 @@ import UserCard from './components/UserCard';
 import './App.css';
 
 function App() {
-  const [users, setUsers] = useState([]);
-
+  const [users, setUsers] = useState([]); // estado para quando os dados mudam
+  const [pgAtual, setCurrentPage] = useState(1); // variavel e função que a altera 
+  
   useEffect(() => {
     fetch('http://localhost:3001/peoples')
       .then((res) => res.json())
