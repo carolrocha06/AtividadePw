@@ -1,6 +1,7 @@
 /* src/App.css */
-html, body {
-    display: flex; 
+html,
+body {
+    display: flex;
     justify-content: center;
     background-color: #FF97CF;
     width: 100%;
@@ -20,14 +21,33 @@ html, body {
 
 h1 {
     color: #f9f9f9;
-    text-shadow: 2px 1px 6px black; /* deslocamento-x, deslocamento-y, raio-de-desfoque, cor */
+    text-shadow: 2px 1px 6px black; /* deslocamento horizontal, deslocamento vertical, raio-de-desfoque, cor */
 }
 
 h2 {
     color: #f9f9f9;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 2px black; /* deslocamento horizontal, deslocamento vertical, raio-de-desfoque, cor */
 }
 
-.paginacao button{
-    margin: 12px 10px; /* espaco vertical 8px e horizontal de 10px entre os botoes */
+.paginacao button {
+    margin: 12px 10px;
+    /* espaco vertical 8px e horizontal de 10px entre os botoes */
+}
+
+.usuario-avatar { /* <img> tem o nome de classe para estilizar no css */
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* para manter a proporção da imagem */
+    border: 5px solid white;
+    border-radius: 50%; /* para deixar a imagem circular */
+}
+
+.Detalhes {
+    background-color:  #ffaed9;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    border: 5px solid white;
+    border-radius: 50px;
 }

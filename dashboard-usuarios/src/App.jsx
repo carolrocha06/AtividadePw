@@ -39,15 +39,17 @@ function App() {
   };
 
   const deselecionarUsuario = () => {
-    setUsuarioSelecionado(null); // altera o estado do usuario selecionado para null
+    setUsuarioSelecionado(null); // altera o estado do usuario selecionado para null (vazio), ou seja, nenhum usuario selecionado
   }
 
-  if (usuarioSelecionado) { // se um usuario estiver selecionado
+  if (usuarioSelecionado) { // se um usuario estiver selecionado (conter um valor diferente de null), se for null não executa o codigo do if
     return (
-      <div className="App">
+      <div className="Detalhes">
         <h1>Detalhes do Usuário</h1>
-        <img src={usuarioSelecionado.avatar} alt={usuarioSelecionado.name} />
-        <h3>Nome: {usuarioSelecionado.firstName}</h3>
+        <img className="usuario-avatar" src={usuarioSelecionado.avatar} alt={usuarioSelecionado.name} /> {/* mostra a imagem do usuario selecionado */}
+        <h2>Nome Completo: {usuarioSelecionado.firstName} {usuarioSelecionado.lastName}</h2>
+        <h2>Email: {usuarioSelecionado.email} </h2>
+        <h2>Endereço: {usuarioSelecionado.address}</h2>
         <button onClick={deselecionarUsuario}>Voltar</button>
       </div>
     );
