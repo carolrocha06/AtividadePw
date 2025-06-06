@@ -44,13 +44,13 @@ function App() {
 
   if (usuarioSelecionado) { // se um usuario estiver selecionado (conter um valor diferente de null), se for null não executa o codigo do if
     return (
-      <div className="Detalhes">
-        <h1>Detalhes do Usuário</h1>
+      <div className="Detalhes"> {/* retorna a pagina de detalhes se o usuario estiver selecionado */}
+        <h1>Detalhes do Usuário</h1> {/* titulo da pagina de detalhes */}
         <img className="usuario-avatar" src={usuarioSelecionado.avatar} alt={usuarioSelecionado.name} /> {/* mostra a imagem do usuario selecionado */}
-        <h2>Nome Completo: {usuarioSelecionado.firstName} {usuarioSelecionado.lastName}</h2>
-        <h2>Email: {usuarioSelecionado.email} </h2>
-        <h2>Endereço: {usuarioSelecionado.address}</h2>
-        <button onClick={deselecionarUsuario}>Voltar</button>
+        <h2>Nome Completo: {usuarioSelecionado.firstName} {usuarioSelecionado.lastName}</h2> {/* mostra o nome completo do usuario selecionado */}
+        <h2>Email: {usuarioSelecionado.email} </h2>  {/* email do usuario selecionado */}
+        <h2>Endereço: {usuarioSelecionado.address}</h2> {/* endereço do usuario selecionado (todas os dados em h2) */}
+        <button onClick={deselecionarUsuario}>Voltar</button> {/* volta para pg inicial e chama a função deselecionarUsuario (estado null) */}
       </div>
     );
   }

@@ -18,6 +18,7 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
+  border: rgb(29, 28, 28) 1px solid;
 }
 
 .user-card h3 {
