@@ -5,7 +5,8 @@ import './App.css';
 
 function App() {
   const [users, setUsers] = useState([]); // estado para quando os dados mudam
-  const [pgAtual, setCurrentPage] = useState(1); // variavel do estado comeca com 1 e a função altera 
+  const [pgAtual, setCurrentPage] = useState(1); // desafio 1- variavel do estado comeca com 1 e a função altera 
+  const [usuarioSelecionado, setUsuarioSelecionado] = useState(null); // desafio 2- estado para o usuario selecionado, que comeca com null pois nenhum usuario esta selecionado inicialmente
   
   // codigo inicial- useEffect para buscar os dados quando o componente user é montado
   useEffect(() => {
@@ -32,6 +33,26 @@ function App() {
     }
   };
 
+  // desafio 2- função para selecionar um usuario
+  const selecionarUsuario = (user) => {
+    setUsuarioSelecionado(user); // altera o estado do usuario selecionado
+  };
+
+  const deselecionarUsuario = () => {
+    setUsuarioSelecionado(null); // altera o estado do usuario selecionado para null
+  }
+
+  if (usuarioSelecionado) { // se um usuario estiver selecionado
+    return (
+      <div className="App">
+        <h1>Detalhes do Usuário</h1>
+        <img src={usuarioSelecionado.avatar} alt={usuarioSelecionado.name} />
+        <h3>Nome: {usuarioSelecionado.firstName}</h3>
+        <button onClick={deselecionarUsuario}>Voltar</button>
+      </div>
+    );
+  }
+
   // codigo inicial
   return (
     <div className="App">
@@ -39,7 +60,9 @@ function App() {
       <h2>Total de usuários: {users.length}</h2>
       <div className="user-container">
         {usuariosAtuais.map((user) => ( // limita a quantidade de usuarios que serão mostrados na pagina (5, nesse caso)
+        <div onClick={() => selecionarUsuario(user)}>
           <UserCard key={user.id} user={user} />
+        </div>
         ))}
       </div>
       <div className="paginacao">
