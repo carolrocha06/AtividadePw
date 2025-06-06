@@ -48,8 +48,7 @@ function App() {
         <button onClick={proximaPagina} disabled={pgAtual >= Math.ceil(users.length / 5)}>Próxima</button>
       </div>
     </div>
-  );
-
+  ); 
 }
 
 export default App;

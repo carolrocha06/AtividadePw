@@ -3,9 +3,6 @@ html, body {
     display: flex; 
     justify-content: center;
     background-color: #FF97CF;
-    margin: 0;
-    padding: 0;
-    height: 100%;
     width: 100%;
 }
 
@@ -32,5 +29,5 @@ h2 {
 }
 
 .paginacao button{
-    margin: 0 10px; /* espaco horizontal de 10px entre os botoes */
+    margin: 12px 10px; /* espaco vertical 8px e horizontal de 10px entre os botoes */
 }
