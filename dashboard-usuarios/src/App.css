@@ -1,6 +1,15 @@
 /* src/App.css */
-.App {
+html, body {
+    display: flex; 
+    justify-content: center;
     background-color: #FF97CF;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.App {
     font-family: Arial, sans-serif;
     padding: 20px;
     text-align: center;
@@ -20,4 +29,8 @@ h1 {
 h2 {
     color: #f9f9f9;
     text-shadow: 1px 1px 2px black; 
+}
+
+.paginacao button{
+    margin: 0 10px; /* espaco horizontal de 10px entre os botoes */
 }
