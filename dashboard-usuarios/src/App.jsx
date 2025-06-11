@@ -27,7 +27,7 @@ function App() {
     }
   };
 
-  const paginaAnterior = () => { // função responsavel por ir para a pagina anterior
+  const paginaAnterior = () => { // atribui a variavel para a arrow function (com seta) anonima responsavel por ir para a pagina anterior
     if (pgAtual > 1) { // se a pagina atual for maior que 1
       setCurrentPage(parseInt(pgAtual) - 1);  // a funcao setCurrentPage altera o estado da pagina atual ao subtrair menos um e precisa do parseInt para não ser Concatenacao
     }
