@@ -9,6 +9,7 @@ function App() {
   const [usuarioSelecionado, setUsuarioSelecionado] = useState(null); // desafio 2- estado para o usuario selecionado, que comeca com null pois nenhum usuario esta selecionado inicialmente
   
   // codigo inicial- useEffect para buscar os dados quando o componente user é montado
+  // executa toda vez que o app carrega
   useEffect(() => {
     fetch('http://localhost:3001/peoples')
       .then((res) => res.json())
@@ -16,7 +17,7 @@ function App() {
       .catch((err) => console.error('Erro ao buscar usuários:', err));
   }, []);
 
-  // desafio 1- adicionando uma paginacao
+  // desafio 1- adicionando uma paginacao, muda a pagina e consequentemente reinicia o valor da constante
   const ultimoUsuario = pgAtual * 5; // pega o ultimo usuario da pagina
   const primeiroUsuario = ultimoUsuario - 5; // pega o primeiro usuario da pagina
   const usuariosAtuais = users.slice(primeiroUsuario, ultimoUsuario); // users é a variavel do estado, já slice pega os users inicial e final para mostrar na pagina
@@ -55,12 +56,12 @@ function App() {
     );
   }
 
-  // codigo inicial
+  // codigo inicial + desafio
   return (
     <div className="App">
       <h1>Dashboard de Usuários</h1>
       <h2>Total de usuários: {users.length}</h2>
-      <div className="user-container">
+      <div className="user-container"> 
         {usuariosAtuais.map((user) => ( // limita a quantidade de usuarios que serão mostrados na pagina (5, nesse caso)
         <div onClick={() => selecionarUsuario(user)}>
           <UserCard key={user.id} user={user} />
@@ -68,8 +69,8 @@ function App() {
         ))}
       </div>
       <div className="paginacao">
-        <button onClick={paginaAnterior} disabled={pgAtual === 1}>Anterior</button>
-        <span>Página {pgAtual}</span>
+        <button onClick={paginaAnterior} disabled={pgAtual === 1}>Anterior</button> 
+        <span>Página {pgAtual}</span> 
         <button onClick={proximaPagina} disabled={pgAtual >= Math.ceil(users.length / 5)}>Próxima</button>
       </div>
     </div>
