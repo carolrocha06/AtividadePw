@@ -11,13 +11,13 @@ function App() {
   // codigo inicial- useEffect para buscar os dados quando o componente user é montado
   // executa toda vez que o app carrega
   useEffect(() => {
-    fetch('http://localhost:3001/peoples')
+    fetch('http://localhost:3001/peoples') // puxa os usuarios do db.json
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error('Erro ao buscar usuários:', err));
   }, []);
 
-  // desafio 1- adicionando uma paginacao, muda a pagina e consequentemente reinicia o valor da constante
+  // desafio 1- adicionando uma paginacao, muda a pagina e consequentemente reinicia o valor da variavel constante 
   const ultimoUsuario = pgAtual * 5; // pega o ultimo usuario da pagina
   const primeiroUsuario = ultimoUsuario - 5; // pega o primeiro usuario da pagina
   const usuariosAtuais = users.slice(primeiroUsuario, ultimoUsuario); // users é a variavel do estado, já slice pega os users inicial e final para mostrar na pagina
